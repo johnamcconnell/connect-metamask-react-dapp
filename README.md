@@ -655,7 +655,10 @@ Since we're passing a prop to our ConnectButton, we'll have to make a slight cha
 type Props = {
   handleOpenModal: any;
 }
-
+//dont forget to set the {handleOpenModal}: Props in the function
+export default function ConnectButton({handleOpenModal}: Props) {
+  const {activateBrowserWallet, account } = useEthers();
+  const etherBalance = useEtherBalance(account);
 // ...other code
       <Button
         // add named function to handle opening modal
